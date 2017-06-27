@@ -1,0 +1,60 @@
+html {
+	background: #333;
+	color: #ccc;
+}
+body {
+	font-family: "Fira Sans", "Source Sans Pro", Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	font-size: 1rem;
+	line-height: 1.5rem;
+	display: block;
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+
+main {
+	background: #F2F2F2;
+	color: #333;
+	padding: 1.5rem;
+    box-sizing: border-box;
+}
+
+h1 {
+	font-size: 1.75rem;
+}
+
+h1:after {
+    display: table;
+    width: 100%;
+    content: " ";
+    margin-top: -1px;
+    border-bottom: 1px dotted;
+}
+
+p {
+    margin: 0 0 1.5rem;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    border-bottom: 1px solid;
+}
+
+.faqItem {
+    border-color: #000;
+    border-top: 1px solid;
+}
+
+.quest {
+    display: block;
+    font-weight: bolder;
+    font-style: normal;
+    cursor: pointer;
+}
+
+.answ {
+	display: none;
+}
