@@ -12,34 +12,31 @@ $(function() {
 		}
 	).on('click', function() {
 
-		// find opened answer and slideUp it
-		if (ThereIsOpenAnsw()[0] !== $(this).next()[0]) {
-			ThereIsOpenAnsw().slideToggle('slow');
-		}
+		var $answ = $(this).next();
 		
-		// show() and hide answer
-		$(this).next().slideToggle('slow');
-
-		}
-	);
-
-	$('.quandaset').find('a').on('click', function() {
-		var $attr = $(this).attr('href').slice(1);
-		var $answ = $('#' + $attr).find('.answ');
-
-		if (ThereIsOpenAnsw()[0] !== $answ[0]) {
-			ThereIsOpenAnsw().slideToggle('slow');
-		} else {
-			return
-		};
-
+		// find opened(:visible) answer and slideUp it
+		$('.faqItem .answ:visible').not($answ).slideUp('slow');
+		// show() and hide current answer
 		$answ.slideToggle('slow');
 		}
 	);
 
-	// return opened answers
-	ThereIsOpenAnsw = function() {
+	// sliding-down answers using quandaset
+	$('.quandaset').find('a').on('click', function() {
+		var $attr = $(this).attr('href').slice(1);
+		var $answ = $('#' + $attr).find('.answ');
+
+		$('.faqItem .answ:visible').not($answ).slideUp('slow');
+		$answ.slideToggle('slow');
+		}
+	);
+
+	// return opened answers - I
+	/*ThereIsOpenAnsw = function() {
 		return $('div.answ[style*="display: block"]');
 	};
+	// return opened answers - II
+	/*var $answ = $(this).next();		
+	$('.faqItem .answ:visible').not($answ)*/
 
 });
