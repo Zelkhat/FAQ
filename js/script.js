@@ -23,9 +23,10 @@ $(function() {
 
 	// sliding-down answers using quandaset
 	$('.quandaset').find('a').on('click', function() {
-		var $attr = $(this).attr('href').slice(1);
-		var $answ = $('#' + $attr).find('.answ');
-
+		
+		var $attr = $(this).attr('href');
+		var $answ = $($attr).find('.answ');
+		
 		$('.faqItem .answ:visible').not($answ).slideUp('slow');
 		$answ.stop(true, true).slideToggle('slow');
 		}
