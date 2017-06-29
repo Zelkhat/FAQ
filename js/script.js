@@ -17,7 +17,7 @@ $(function() {
 		// find opened(:visible) answer and slideUp it
 		$('.faqItem .answ:visible').not($answ).slideUp('slow');
 		// show() and hide current answer
-		$answ.slideToggle('slow');
+		$answ.stop(true, true).slideToggle('slow');
 		}
 	);
 
@@ -27,16 +27,14 @@ $(function() {
 		var $answ = $('#' + $attr).find('.answ');
 
 		$('.faqItem .answ:visible').not($answ).slideUp('slow');
-		$answ.slideToggle('slow');
+		$answ.stop(true, true).slideToggle('slow');
 		}
 	);
 
-	// return opened answers - I
-	/*ThereIsOpenAnsw = function() {
-		return $('div.answ[style*="display: block"]');
-	};
-	// return opened answers - II
-	/*var $answ = $(this).next();		
-	$('.faqItem .answ:visible').not($answ)*/
-
 });
+
+// return opened answers - I
+	//$('div.answ[style*="display: block"]')...
+// return opened answers - II
+	//var $answ = $(this).next();		
+	//$('.faqItem .answ:visible').not($answ)...
